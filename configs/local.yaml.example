@@ -1,0 +1,16 @@
+# Copy to configs/local.yaml and put your real paths here.
+#
+# configs/local.yaml is not tracked by git, so clinical locations never reach
+# the repository. configs/default.yaml keeps only relative paths for the same
+# reason.
+#
+#     python scripts/03_train.py --config configs/local.yaml
+
+paths:
+  root: "/absolute/path/to/your/project"
+  ecg_dir: "/absolute/path/to/ecg"
+  muse_xml_dir: "/absolute/path/to/muse_xml"
+  cohort_csv: "/absolute/path/to/cohort.csv"
+
+training:
+  device: "cuda:0"

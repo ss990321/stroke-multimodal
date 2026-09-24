@@ -1,0 +1,29 @@
+# Every setting the pipeline takes. Values absent here keep the defaults
+# recorded in src/stroke_multimodal/config.py, which are the ones the published
+# runs used.
+
+paths:
+  root: "."
+  ecg_dir: "data/ecg"              # one CSV per recording, columns are leads
+  muse_xml_dir: "data/muse"        # one XML per recording, the cart's export
+  cohort_csv: "data/cohort.csv"    # file_name, PatientID, label
+  features_csv: "outputs/feature_table.csv"
+  splits_pkl: "outputs/splits.pkl"
+  recording_cache: "outputs/recordings.npz"
+  outputs: "outputs"
+
+signal:
+  sampling_rate_hz: 500
+  duration_s: 10
+  n_leads: 12
+
+split:
+  n_folds: 5
+  seed: 42
+  stratify: true
+
+training:
+  seed: 42
+  device: "cuda:0"
+  # Reproducible but slower; left off in the published runs.
+  deterministic: false

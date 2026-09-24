@@ -1,0 +1,6 @@
+# Normalise line endings: LF in the repository, native in the working copy.
+* text=auto eol=lf
+
+# The synthetic recordings are text, but large; keep them out of diffs.
+data/dummy/ecg/*.csv  -diff
+data/dummy/muse/*.xml -diff

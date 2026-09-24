@@ -1,0 +1,50 @@
+# ---------------------------------------------------------------- clinical data
+# Nothing under data/ is committed except the synthetic cohort and the notes
+# that say what belongs there.
+data/*
+!data/README.md
+!data/dummy/
+data/dummy/*
+!data/dummy/README.md
+!data/dummy/generate.py
+!data/dummy/cohort.csv
+!data/dummy/ecg/
+!data/dummy/muse/
+
+# Real paths live in a config that is never committed.
+configs/local.yaml
+configs/*.local.yaml
+
+# ------------------------------------------------------------- run artefacts
+outputs/
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+*.pkl
+*.pickle
+
+# Tables and figures generated from private predictions. The dummy cohort and
+# the configs are re-admitted above and below.
+*.xlsx
+*.png
+*.jpg
+*.jpeg
+*.pdf
+
+# ------------------------------------------------------------------- Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+.venv/
+venv/
+.pytest_cache/
+
+# ---------------------------------------------------------------- OS, editors
+.DS_Store
+.idea/
+.vscode/

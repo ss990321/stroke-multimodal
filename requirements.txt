@@ -1,0 +1,15 @@
+# Core pipeline
+numpy>=1.23
+pandas>=1.5
+scipy>=1.9
+scikit-learn>=1.2
+torch>=2.0            # the published runs used 2.8.0
+torchvision>=0.15
+
+# Stage 1 only: measuring the waveform. The version is fixed so that the
+# extraction matches the one used for the study.
+neurokit2==0.2.7
+PyWavelets>=1.1
+
+# Reading configs/default.yaml
+PyYAML>=6.0

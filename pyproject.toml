@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stroke-multimodal"
+version = "1.0.0"
+description = "Hybrid multimodal fusion of raw ECG signals and derived measurements for stroke classification"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "So-Yun Im" }]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.23",
+    "pandas>=1.5",
+    "scipy>=1.9",
+    "scikit-learn>=1.2",
+    "torch>=2.0",
+    "torchvision>=0.15",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+# Stage 1 only: measuring the waveform.
+extraction = ["neurokit2==0.2.7", "PyWavelets>=1.1"]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

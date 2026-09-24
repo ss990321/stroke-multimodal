@@ -1,0 +1,28 @@
+# The synthetic cohort in data/dummy. Runs on a fresh clone with no clinical
+# data, so every stage can be checked before any real recording is involved.
+# The metrics are meaningless: the recordings are simulated.
+
+paths:
+  root: "."
+  ecg_dir: "data/dummy/ecg"
+  muse_xml_dir: "data/dummy/muse"
+  cohort_csv: "data/dummy/cohort.csv"
+  features_csv: "outputs/dummy/feature_table.csv"
+  splits_pkl: "outputs/dummy/splits.pkl"
+  recording_cache: "outputs/dummy/recordings.npz"
+  outputs: "outputs/dummy"
+
+signal:
+  sampling_rate_hz: 500
+  duration_s: 10
+  n_leads: 12
+
+split:
+  n_folds: 5
+  seed: 42
+  stratify: true
+
+training:
+  seed: 42
+  device: "cuda:0"
+  deterministic: false
